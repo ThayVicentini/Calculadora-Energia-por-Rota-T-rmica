@@ -1,0 +1,64 @@
+.panel {
+  border: 2px solid;
+  border-radius: 14px;
+  padding: 16px 18px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.icon { font-size: 20px; }
+
+.title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.block {
+  margin-bottom: 10px;
+  padding-top: 10px;
+  border-top: 1px solid transparent;
+}
+
+.block:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.sublabel {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.bigNum {
+  font-size: 24px;
+  font-family: 'DM Mono', monospace;
+  font-weight: 700;
+}
+
+.bigUnit {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.medNum {
+  font-size: 18px;
+  font-family: 'DM Mono', monospace;
+  font-weight: 700;
+}
+
+.medUnit {
+  font-size: 10px;
+  font-weight: 400;
+}

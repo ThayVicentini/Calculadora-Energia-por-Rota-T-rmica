@@ -1,0 +1,116 @@
+export const COLORS = {
+  darkBg:     '#0A1628',
+  midBg:      '#0E2340',
+  card:       '#ffffff',
+  border:     '#EEF2F6',
+  inputBg:    '#F7FAFC',
+  inputBorder:'#D1DCE5',
+  label:      '#7A8B99',
+  text:       '#1A2733',
+  muted:      '#A0ADB7',
+  accent:     '#00B4D8',
+  danger:     '#E74C3C',
+}
+
+export const TECHS = [
+  {
+    key: 'comb',
+    label: 'Combustão',
+    icon: '🔥',
+    color: '#FF6B35',
+    light: '#FFF0EB',
+    peKey: 'Pe_comb',
+    eeKey: 'Ee_comb',
+    elKey: 'El_comb',
+    formula: 'Pₑ = Pₜ × η_R',
+    ref: 'Ciclo Rankine — IRENA, 2022',
+  },
+  {
+    key: 'gas',
+    label: 'Gaseificação',
+    icon: '💨',
+    color: '#00B4D8',
+    light: '#E8F9FD',
+    peKey: 'Pe_gas',
+    eeKey: 'Ee_gas',
+    elKey: 'El_gas',
+    formula: 'Pₑ = Pₜ × η_gas × η_mot',
+    ref: 'Leito fluidizado + motor diesel',
+  },
+  {
+    key: 'piro_bo',
+    label: 'Pirólise Bio-óleo',
+    icon: '🫙',
+    color: '#7B2D8B',
+    light: '#F5EAFB',
+    peKey: 'Pe_piro_bo',
+    eeKey: 'Ee_piro_bo',
+    elKey: 'El_piro_bo',
+    formula: 'Pₑ = Pₜ × η_ger_bo',
+    ref: 'Wang et al., 2025',
+  },
+  {
+    key: 'piro_sg',
+    label: 'Pirólise Syngas',
+    icon: '🌫️',
+    color: '#2D6A4F',
+    light: '#E8F5EE',
+    peKey: 'Pe_piro_sg',
+    eeKey: 'Ee_piro_sg',
+    elKey: 'El_piro_sg',
+    formula: 'Pₑ = Pₜ × η_ger_sg',
+    ref: 'Indrawan et al., 2017',
+  },
+]
+
+export const INPUT_SECTIONS = [
+  {
+    title: 'Produtividade da Cultura',
+    icon: '🌾',
+    fields: [
+      { label: 'Área agrícola (Aₚ)', name: 'Ap', unit: 'ha/ano', hint: 'Fonte: CONAB / SIDRA / IBGE' },
+      { label: 'Produtividade média (P)', name: 'P', unit: 't/ha', hint: 'Fonte: CONAB / MAPA / IBGE' },
+      { label: 'Fator residual (fᵣ)', name: 'fr', unit: 'decimal', hint: 'Ex: 0,55 = 55% de bagaço de laranja', step: 0.01, min: 0, max: 1 },
+      { label: 'Tempo operacional (tₒₚ)', name: 'top', unit: 'h/ano', hint: '80% = 7008 | 90% = 7884 | 95% = 8322 h/ano' },
+    ],
+  },
+  {
+    title: 'Umidade da Biomassa',
+    icon: '💧',
+    fields: [
+      { label: 'Umidade inicial (Xᵢ)', name: 'Xi', unit: 'decimal', hint: 'Ex: 0,85 para bagaço de laranja', step: 0.01, min: 0, max: 0.99 },
+      { label: 'Umidade final após secagem (Xf)', name: 'Xf', unit: 'decimal', hint: 'Gaseificação: 0,10–0,15 | Pirólise: 0,05–0,10 | Combustão: ≤0,20 | Pellets: 0,07–0,09', step: 0.01, min: 0, max: 0.99 },
+    ],
+  },
+  {
+    title: 'Poder Calorífico e Densificação',
+    icon: '🔥',
+    fields: [
+      { label: 'PCI da biomassa seca (PCIₛ)', name: 'PCIs', unit: 'MJ/kg', hint: 'Modelo de Mendeleiv ou determinado experimentalmente' },
+      { label: 'Calor latente da água (λ)', name: 'lambda', unit: 'MJ/kg', hint: 'Constante: 2,5 MJ/kg a 0°C — Cortez et al., 2014' },
+      { label: 'Eficiência densificação (η_d)', name: 'etaD', unit: 'decimal', hint: '0,94 típico de fabricantes; usar 1 se sem densificação', step: 0.01, min: 0, max: 1 },
+    ],
+  },
+  {
+    title: 'Eficiências de Conversão',
+    icon: '⚡',
+    fields: [
+      { label: 'Ciclo Rankine — Combustão (η_R)', name: 'etaR', unit: 'decimal', hint: '0,30 — IRENA, 2022', step: 0.01, min: 0, max: 1 },
+      { label: 'Gaseificador leit. fluid. (η_gas)', name: 'etaGas', unit: 'decimal', hint: '0,80 — Teixeira et al., 2013', step: 0.01, min: 0, max: 1 },
+      { label: 'Motor a diesel — Gasif. (η_mot)', name: 'etaMot', unit: 'decimal', hint: '0,39 — Echeverry, 2021', step: 0.01, min: 0, max: 1 },
+      { label: 'Gerador pirólise bio-óleo (η_ger_bo)', name: 'etaGerBO', unit: 'decimal', hint: '0,536 — Wang et al., 2025', step: 0.001, min: 0, max: 1 },
+      { label: 'Gerador pirólise syngas (η_ger_sg)', name: 'etaGerSG', unit: 'decimal', hint: '0,213 — Indrawan et al., 2017', step: 0.001, min: 0, max: 1 },
+      { label: 'Fator de capacidade (fc)', name: 'fc', unit: 'decimal', hint: '0,70 — IRENA 2022 / EPE 2020', step: 0.01, min: 0, max: 1 },
+    ],
+  },
+  {
+    title: 'Energia do Pré-tratamento',
+    icon: '🏭',
+    fields: [
+      { label: 'Potência do secador (P_sec)', name: 'Psec', unit: 'kW', hint: 'Inclui periféricos, transporte e exaustão de ar' },
+      { label: 'Potência cominuição (P_com)', name: 'Pcom', unit: 'kW', hint: 'Fragmentação da biomassa' },
+      { label: 'Consumo densificação (E_d)', name: 'Ed', unit: 'kW/kg', hint: '0,04 kW/kg — Fabricante BIOMAX; varia com a biomassa', step: 0.001 },
+      { label: 'Energia térmica secagem (Q_t)', name: 'Qt', unit: 'kW', hint: 'Evaporação + aquecimento da água + vapor + aquecimento do sólido' },
+    ],
+  },
+]

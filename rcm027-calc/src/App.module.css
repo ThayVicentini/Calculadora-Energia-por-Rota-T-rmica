@@ -1,0 +1,172 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0A1628 0%, #0E2340 50%, #071220 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ── */
+.header {
+  padding: 32px 24px 24px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  background: #00B4D820;
+  border-radius: 30px;
+  padding: 4px 14px;
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #00B4D8;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: #7A9BB5;
+  font-size: 13px;
+}
+
+/* ── Tab bar ── */
+.tabBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  padding: 0 16px;
+}
+
+.tabGroup {
+  display: flex;
+  gap: 4px;
+  background: #0A1628;
+  padding: 6px;
+  border-radius: 40px;
+}
+
+.tab {
+  padding: 8px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: transparent;
+  color: #7A8B99;
+  transition: background 0.2s, color 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.tab:hover {
+  color: #ffffff;
+}
+
+.tabActive {
+  background: #00B4D8;
+  color: #ffffff;
+}
+
+/* ── Content ── */
+.content {
+  flex: 1;
+  max-width: 980px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+/* ── Card grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 24px #00000028;
+}
+
+/* ── Section title inside card ── */
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid #EEF2F6;
+  font-size: 12px;
+  font-weight: 800;
+  color: #1A2733;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Tech comparison grid ── */
+.techGrid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── Reset button ── */
+.resetRow {
+  display: flex;
+  justify-content: center;
+  grid-column: 1 / -1;
+}
+
+.resetBtn {
+  background: transparent;
+  border: 1.5px solid #D1DCE5;
+  color: #7A8B99;
+  border-radius: 30px;
+  padding: 8px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+}
+
+.resetBtn:hover {
+  background: #EEF2F6;
+  color: #1A2733;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 11px;
+  color: #3A5068;
+  letter-spacing: 0.04em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .tab {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .techGrid {
+    flex-direction: column;
+  }
+}
