@@ -23,9 +23,9 @@ export default function App() {
     <div className={styles.app}>
       {/* ── Header ── */}
       <header className={styles.header}>
-        <div className={styles.badge}>RCM027 · Pré-tratamento de Biomassa · UNIFEI</div>
+        <div className={styles.badge}>Pré-tratamento de Biomassa</div>
         <h1 className={styles.title}>Calculadora Energética</h1>
-        <p className={styles.subtitle}>Prof. Hugo Perazzini · Mestrado em Engenharia de Energia</p>
+        <p className={styles.subtitle}>Prof. Hugo Perazzini · Thaizy Vicentini</p>
       </header>
 
       {/* ── Tab bar ── */}
@@ -182,7 +182,7 @@ export default function App() {
       </main>
 
       <footer className={styles.footer}>
-        RCM027 – Pré-tratamento de Biomassa · UNIFEI · Prof. Hugo Perazzini
+        Pré-tratamento de Biomassa · UNIFEI · Prof. Hugo Perazzini
       </footer>
     </div>
   )
