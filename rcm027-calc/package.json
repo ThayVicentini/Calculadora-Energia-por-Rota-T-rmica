@@ -1,7 +1,7 @@
 {
   "name": "rcm027-calculadora-energetica",
   "version": "1.0.0",
-  "description": "Calculadora de cálculos energéticos para pré-tratamento de biomassa — RCM027 UNIFEI",
+  "description": "Calculadora de cálculos energéticos para pré-tratamento de biomassa",
   "type": "module",
   "scripts": {
     "dev": "vite",
